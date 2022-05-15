@@ -11,6 +11,10 @@ func Hello() string {
 	return "Hello World!"
 }
 
-func Hello_value(name string) string{
+func Hello_value(name string) string {
+	if name == "" {
+		name = "world"
+	}
+
 	return "Hello, i am " + name
 }

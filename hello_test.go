@@ -28,3 +28,27 @@ func TestValue(t *testing.T) {
 		t.Errorf("valuePassed %q result %q", valuePassed, result)
 	}
 }
+
+//test with value assignment
+func TestAssignValue(t *testing.T) {
+	fmt.Println("running in TestAssignValue")
+	assertMessage := func(t testing.TB, aValue, aResult string) {
+		t.Helper()
+		if aValue != aResult {
+			t.Errorf("aValue %q aResult %q", aValue, aResult)
+		}
+
+	}
+
+	t.Run("Saying Hello to assigned name", func(t *testing.T) {
+		aValue := Hello_value("Bala")
+		aResult := "Hello, i am Bala"
+		assertMessage(t, aValue, aResult)
+	})
+	t.Run("saying Hello World", func(t *testing.T) {
+		aValue := Hello_value("")
+		aResult := "Hello, i am world"
+		assertMessage(t, aValue, aResult)
+	})
+
+}
