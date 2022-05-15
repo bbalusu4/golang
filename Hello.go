@@ -10,3 +10,7 @@ func main() {
 func Hello() string {
 	return "Hello World!"
 }
+
+func Hello_value(name string) string{
+	return "Hello, i am " + name
+}
